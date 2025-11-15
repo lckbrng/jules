@@ -1,20 +1,25 @@
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
 body {
-    background-color: #fdf6e3; /* A soft, solarized-light background */
-    color: #657b83; /* Muted, dark text color */
-    font-family: 'Courier New', Courier, monospace;
+    background-color: #0d0d0d; /* Dark, almost black background */
+    color: #00ff41; /* Bright green text */
+    font-family: 'VT323', 'Courier New', Courier, monospace;
     max-width: 800px;
     margin: 40px auto;
     padding: 20px;
-    border: 1px solid #93a1a1;
-    box-shadow: 4px 4px 0px #eee8d5;
+    border: 1px solid #00ff41;
+    box-shadow: 0 0 10px #00ff41;
+    text-shadow: 0 0 5px #00ff41;
     line-height: 1.6;
 }
 
 header {
     text-align: center;
-    border-bottom: 1px solid #93a1a1;
+    border-bottom: 1px solid #00ff41;
     padding-bottom: 10px;
-    color: #cb4b16; /* A retro orange for emphasis */
+    color: #00ff41; /* Green header text */
 }
 
 main {
@@ -22,9 +27,22 @@ main {
 }
 
 h1, h2, h3 {
-    color: #b58900; /* A classic brown/mustard for headings */
+    color: #00ff41; /* Green headings */
+}
+
+a {
+    color: #00ff41;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #00ff41;
+    background-color: #00ff41;
+    color: #0d0d0d;
+    text-decoration: none;
 }
 
 #cursor {
-    color: #657b83; /* Match the cursor to the text color */
+    animation: blink 1s step-end infinite;
+    color: #00ff41; /* Green cursor */
 }
