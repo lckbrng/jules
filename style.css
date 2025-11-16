@@ -28,3 +28,47 @@ h1, h2, h3 {
 #cursor {
     color: #657b83; /* Match the cursor to the text color */
 }
+
+.css-logo {
+/* Bestämmer storleken på hela loggans "arbetsyta" */
+width: 90px;
+height: 90px;
+position: relative; /* Nödvändig för att positionera pseudo-elementen */
+margin: 0 auto 20px; /* Centrerar loggan och lägger till lite marginal */
+
+/* Lite rotation för en mer dynamisk känsla */
+transform: rotate(15deg);
+}
+
+/* * Vi använder ::before och ::after för att skapa de två formerna.
+* De är "barn" till .css-logo-diven.
+*/
+.css-logo::before,
+.css-logo::after {
+content: ''; /* Måste finnas för att pseudo-element ska synas */
+position: absolute; /* Positionera dem fritt inuti .css-logo */
+
+/* Gemensam stil för båda rutorna */
+width: 70px;
+height: 70px;
+border-radius: 8px; /* Lätt rundade hörn */
+}
+
+/* Den bakre formen (blå) */
+.css-logo::before {
+background: #3498db; /* En klarblå färg */
+top: 0;
+left: 0;
+}
+
+/* Den främre formen (grön) */
+.css-logo::after {
+background: #2ecc71; /* En klargrön färg */
+bottom: 0;
+right: 0;
+
+/* * Detta är tricket! 'multiply' blandar färgerna
+* där de överlappar, vilket skapar en mörkare nyans.
+*/
+mix-blend-mode: multiply;
+}
